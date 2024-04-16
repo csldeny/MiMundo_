@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Mundo</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+13px&family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- menu -->
+    <div class="menu">
+
+        <!-- sitio  -->
+        <div class="sitio">
+            <ion-icon class="sitio__icono" name="earth-outline" id="world"></ion-icon>
+            <span class="sitio__span">Mi Mundo</span>
+        </div>
+
+        <!-- boton -->
+        <button class="boton">
+            <ion-icon class="boton__icono" name="add-outline"></ion-icon>
+            <span class="boton__span">Inbox</span>
+        </button>
+
+        <!-- navegacion -->
+        <nav class="nav">
+            <ul>
+                <li class="nav__item">
+                    <a class="link" href="index.html">
+                        <ion-icon class="link__icono" name="home-outline"></ion-icon>
+                        <span class="link__span">Inicio</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="link" href="categorias.html">
+                        <ion-icon class="link__icono " name="shirt-outline"></ion-icon>
+                        <span class="link__span">Categorias</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="link" href="apartados.html">
+                        <ion-icon class="link__icono " name="cube-outline"></ion-icon>
+                        <span class="link__span">Apartados</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="link" href="guardados.html">
+                        <ion-icon class="link__icono " name="bookmark-outline"></ion-icon>
+                        <span class="link__span">Guardados</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="link" href="favoritos.html">
+                        <ion-icon class="link__icono " name="star-outline"></ion-icon>
+                        <span class="link__span">Favoritos</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="link" href="mensajes.html">
+                        <ion-icon class="link__icono" name="mail-outline"></ion-icon>
+                        <span class="link__span">Mensajes</span>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="link" href="nosotros.html">
+                        <ion-icon class="link__icono" name="information-circle-outline"></ion-icon>
+                        <span class="link__span">Nosotros</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- linea -->
+        <div class="linea"></div>
+
+        <!-- usuario -->
+        <div class="usuario">
+            <ion-icon class="usuario__icono" name="person-circle-outline"></ion-icon>
+            <div class="usuario__info">
+                <div class="usuario__nombre-email">
+                    <!-- <div class="usuario__nombre">sldeny</div>
+                    <div class="usuario__email">sldeny@gmail.com</div> -->
+                    <p> <a href="inicioSecion.html" class="btn gradient-text">Iniciar Sesion</a></p>
+                </div>
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <!-- header -->
+    <header class="header contenedor">
+
+        <!-- dropdown -->
+        <nav class="nav__dropdown">
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Primavera</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Sueter</a></li>
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Vestidos</a></li>
+                        <li><a class="dropdown__link" href="">Pantalones</a></li>
+                    </ul>
+                </li>
+            </ul> <!-- .dropdown -->
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Verano</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Blusas</a></li>
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Vestidos</a></li>
+                        <li><a class="dropdown__link" href="">Shorts</a></li>
+                    </ul>
+                </li>
+            </ul> <!-- .dropdown -->
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Otoño</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Sueter</a></li>
+                        <li><a class="dropdown__link" href="">Blusas</a></li>
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Vestidos</a></li>
+                        <li><a class="dropdown__link" href="">Pantalones</a></li>
+                    </ul>
+                </li>
+            </ul> <!-- .dropdown -->
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Invierno</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Sueter</a></li>
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Pantalones</a></li>
+                    </ul>
+                </li>
+            </ul> <!-- .dropdown -->
+        </nav>
+
+        <!-- buscador -->
+        <div class="buscador">
+            <input class="buscador__texto" type="text" placeholder="Buscar">
+            <button class="buscador__boton">
+                <ion-icon class="buscador__icono" name="search-outline"></ion-icon>
+            </button>
+        </div>
+    </header>
+
+    <!-- imagen principal -->
+    <section class="contenedor">
+        <div class="imagen__principal"></div>
+    </section>
+
+    <!-- main -->
+    <main class="contenedor">
+
+        <!-- seccion -->
+        <section>
+            <!-- cartas -->
+            <div class="cartas">
+                <!-- carta -->
+                <div class="carta">
+                    <img class="carta__imagen" src="img/ropita1.jpg" alt="ropa infantil">
+                    <div class="carta__info">
+                        <p class="carta__nombre">Sueter de osito</p>
+                        <div class="carta__talla-precio">
+                            <div class="carta__talla">
+                                <p>Talla:</p>
+                                <p class="carta__texto">3M</p>
+                            </div>
+                            <div class="carta__precio">
+                                <p>Precio:</p>
+                                <p class="carta__texto">$200</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a class="carta__apartar" href="">
+                                <ion-icon class="link__icono link__icono__ch " name="cube-outline"></ion-icon>
+                                Apartar
+                            </a>
+                        </div>
+
+                        <div class="carta__botones">
+                            <a class="carta__boton" href="guardados.html">
+                                <ion-icon class="" name="bookmark-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="favoritos.html">
+                                <ion-icon class="" name="star-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="#">
+                                <ion-icon class="" name="information-circle-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- carta -->
+                <div class="carta">
+                    <img class="carta__imagen" src="img/ropita1.jpg" alt="ropa infantil">
+                    <div class="carta__info">
+                        <p class="carta__nombre">Sueter de osito</p>
+                        <div class="carta__talla-precio">
+                            <div class="carta__talla">
+                                <p>Talla:</p>
+                                <p class="carta__texto">3M</p>
+                            </div>
+                            <div class="carta__precio">
+                                <p>Precio:</p>
+                                <p class="carta__texto">$200</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a class="carta__apartar" href="">
+                                <ion-icon class="link__icono link__icono__ch " name="cube-outline"></ion-icon>
+                                Apartar
+                            </a>
+                        </div>
+
+                        <div class="carta__botones">
+                            <a class="carta__boton" href="guardados.html">
+                                <ion-icon class="" name="bookmark-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="favoritos.html">
+                                <ion-icon class="" name="star-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="#">
+                                <ion-icon class="" name="information-circle-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- carta -->
+                <div class="carta">
+                    <img class="carta__imagen" src="img/ropita1.jpg" alt="ropa infantil">
+                    <div class="carta__info">
+                        <p class="carta__nombre">Sueter de osito</p>
+                        <div class="carta__talla-precio">
+                            <div class="carta__talla">
+                                <p>Talla:</p>
+                                <p class="carta__texto">3M</p>
+                            </div>
+                            <div class="carta__precio">
+                                <p>Precio:</p>
+                                <p class="carta__texto">$200</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a class="carta__apartar" href="">
+                                <ion-icon class="link__icono link__icono__ch " name="cube-outline"></ion-icon>
+                                Apartar
+                            </a>
+                        </div>
+
+                        <div class="carta__botones">
+                            <a class="carta__boton" href="guardados.html">
+                                <ion-icon class="" name="bookmark-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="favoritos.html">
+                                <ion-icon class="" name="star-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="#">
+                                <ion-icon class="" name="information-circle-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- carta -->
+                <div class="carta">
+                    <img class="carta__imagen" src="img/ropita1.jpg" alt="ropa infantil">
+                    <div class="carta__info">
+                        <p class="carta__nombre">Sueter de osito</p>
+                        <div class="carta__talla-precio">
+                            <div class="carta__talla">
+                                <p>Talla:</p>
+                                <p class="carta__texto">3M</p>
+                            </div>
+                            <div class="carta__precio">
+                                <p>Precio:</p>
+                                <p class="carta__texto">$200</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a class="carta__apartar" href="">
+                                <ion-icon class="link__icono link__icono__ch " name="cube-outline"></ion-icon>
+                                Apartar
+                            </a>
+                        </div>
+
+                        <div class="carta__botones">
+                            <a class="carta__boton" href="guardados.html">
+                                <ion-icon class="" name="bookmark-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="favoritos.html">
+                                <ion-icon class="" name="star-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="#">
+                                <ion-icon class="" name="information-circle-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- carta -->
+                <div class="carta">
+                    <img class="carta__imagen" src="img/ropita1.jpg" alt="ropa infantil">
+                    <div class="carta__info">
+                        <p class="carta__nombre">Sueter de osito</p>
+                        <div class="carta__talla-precio">
+                            <div class="carta__talla">
+                                <p>Talla:</p>
+                                <p class="carta__texto">3M</p>
+                            </div>
+                            <div class="carta__precio">
+                                <p>Precio:</p>
+                                <p class="carta__texto">$200</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a class="carta__apartar" href="">
+                                <ion-icon class="link__icono link__icono__ch " name="cube-outline"></ion-icon>
+                                Apartar
+                            </a>
+                        </div>
+
+                        <div class="carta__botones">
+                            <a class="carta__boton" href="guardados.html">
+                                <ion-icon class="" name="bookmark-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="favoritos.html">
+                                <ion-icon class="" name="star-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="#">
+                                <ion-icon class="" name="information-circle-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- carta -->
+                <div class="carta">
+                    <img class="carta__imagen" src="img/ropita1.jpg" alt="ropa infantil">
+                    <div class="carta__info">
+                        <p class="carta__nombre">Sueter de osito</p>
+                        <div class="carta__talla-precio">
+                            <div class="carta__talla">
+                                <p>Talla:</p>
+                                <p class="carta__texto">3M</p>
+                            </div>
+                            <div class="carta__precio">
+                                <p>Precio:</p>
+                                <p class="carta__texto">$200</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a class="carta__apartar" href="">
+                                <ion-icon class="link__icono link__icono__ch " name="cube-outline"></ion-icon>
+                                Apartar
+                            </a>
+                        </div>
+
+                        <div class="carta__botones">
+                            <a class="carta__boton" href="guardados.html">
+                                <ion-icon class="" name="bookmark-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="favoritos.html">
+                                <ion-icon class="" name="star-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="#">
+                                <ion-icon class="" name="information-circle-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="contenedor">
+        <div class="footer" id="acomodoFooter">
+            <h3>DerechosReservados <span>Mi Mundo</span></h3>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
