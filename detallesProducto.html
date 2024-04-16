@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Slabo+13px&family=Slabo+27px&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
-
     <!-- menu -->
     <div class="menu">
 
@@ -23,10 +21,10 @@
         </div>
 
         <!-- boton -->
-        <button class="boton">
+        <a class="boton" href="mensajes.html">
             <ion-icon class="boton__icono" name="add-outline"></ion-icon>
             <span class="boton__span">Inbox</span>
-        </button>
+        </a>
 
         <!-- navegacion -->
         <nav class="nav">
@@ -38,40 +36,29 @@
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a class="link" href="ropa.html">
+                    <a class="link" href="categorias.html">
                         <ion-icon class="link__icono " name="shirt-outline"></ion-icon>
-                        <span class="link__span">Ropa</span>
+                        <span class="link__span">Categorias</span>
                     </a>
                 </li>
-
                 <li class="nav__item">
                     <a class="link" href="apartados.html">
                         <ion-icon class="link__icono " name="cube-outline"></ion-icon>
                         <span class="link__span">Apartados</span>
                     </a>
                 </li>
-
-                <li class="nav__item">
-                    <a class="link" href="guardados.html">
-                        <ion-icon class="link__icono " name="bookmark-outline"></ion-icon>
-                        <span class="link__span">Guardados</span>
-                    </a>
-                </li>
-
                 <li class="nav__item">
                     <a class="link" href="favoritos.html">
                         <ion-icon class="link__icono " name="star-outline"></ion-icon>
                         <span class="link__span">Favoritos</span>
                     </a>
                 </li>
-
                 <li class="nav__item">
                     <a class="link" href="mensajes.html">
                         <ion-icon class="link__icono" name="mail-outline"></ion-icon>
                         <span class="link__span">Mensajes</span>
                     </a>
                 </li>
-
                 <li class="nav__item">
                     <a class="link" href="nosotros.html">
                         <ion-icon class="link__icono" name="information-circle-outline"></ion-icon>
@@ -88,33 +75,98 @@
         <div class="usuario">
             <ion-icon class="usuario__icono" name="person-circle-outline"></ion-icon>
             <div class="usuario__info">
-                <div class="nombre-email">
-                    <div class="nombre">sldeny</div>
-                    <div class="email">sldeny@gmail.com</div>
+                <div class="usuario__nombre-email">
+                    <!-- <div class="usuario__nombre">sldeny</div>
+                    <div class="usuario__email">sldeny@gmail.com</div> -->
+                    <p> <a href="inicioSecion.html" class="btn gradient-text">Iniciar Sesion</a></p>
                 </div>
                 <ion-icon name="ellipsis-vertical-outline"></ion-icon>
             </div>
         </div>
-
     </div>
 
     <!-- header -->
-    <header class="contenedor header">
+    <header class="header contenedor">
 
-        <div class="">
-            <h1>
-                barra de busqueda
-            </h1>
+        <!-- dropdown de estaciones -->
+        <nav class="nav__dropdown">
+            <!-- Primavera -->
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Primavera</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Blusas</a></li>
+                        <li><a class="dropdown__link" href="">Vestidos</a></li>
+                        <li><a class="dropdown__link" href="">Faldas</a></li>
+                        <li><a class="dropdown__link" href="">Pantalones</a></li>
+                    </ul>
+                </li>
+            </ul> 
+            <!-- Verano -->
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Verano</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Blusas</a></li>
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Vestidos</a></li>
+                        <li><a class="dropdown__link" href="">Shorts</a></li>
+                    </ul>
+                </li>
+            </ul> 
+            <!-- Otoño -->
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Otoño</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Sueteres</a></li>
+                        <li><a class="dropdown__link" href="">Chamarras</a></li>
+                        <li><a class="dropdown__link" href="">Blusas</a></li>
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Pantalones</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Invierno -->
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Invierno</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Sueteres</a></li>
+                        <li><a class="dropdown__link" href="">Chamarras</a></li>
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Pantalones</a></li>
+                    </ul>
+                </li>
+            </ul> <!-- .dropdown -->
+        </nav>
+
+        <!-- buscador -->
+        <div class="buscador">
+            <input class="buscador__texto" type="text" placeholder="Buscar">
+            <button class="buscador__boton">
+                <ion-icon class="buscador__icono" name="search-outline"></ion-icon>
+            </button>
         </div>
-
-
-
     </header>
 
+    <!-- imagen principal -->
+    <section class="contenedor">
+        <div class="imagen__principal"></div>
+    </section>
 
+    <!-- main -->
     <main class="contenedor">
-       
+        Detalles del producto
     </main>
+
+    <!-- footer -->
+    <footer class="contenedor">
+        <div class="footer" id="acomodoFooter">
+            <h3>DerechosReservados <span>Mi Mundo</span></h3>
+        </div>
+    </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

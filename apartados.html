@@ -14,16 +14,19 @@
 <body>
     <!-- menu -->
     <div class="menu">
+
         <!-- sitio  -->
         <div class="sitio">
             <ion-icon class="sitio__icono" name="earth-outline" id="world"></ion-icon>
             <span class="sitio__span">Mi Mundo</span>
         </div>
+
         <!-- boton -->
-        <button class="boton">
+        <a class="boton" href="mensajes.html">
             <ion-icon class="boton__icono" name="add-outline"></ion-icon>
             <span class="boton__span">Inbox</span>
-        </button>
+        </a>
+
         <!-- navegacion -->
         <nav class="nav">
             <ul>
@@ -43,12 +46,6 @@
                     <a class="link" href="apartados.html">
                         <ion-icon class="link__icono " name="cube-outline"></ion-icon>
                         <span class="link__span">Apartados</span>
-                    </a>
-                </li>
-                <li class="nav__item">
-                    <a class="link" href="guardados.html">
-                        <ion-icon class="link__icono " name="bookmark-outline"></ion-icon>
-                        <span class="link__span">Guardados</span>
                     </a>
                 </li>
                 <li class="nav__item">
@@ -80,8 +77,9 @@
             <ion-icon class="usuario__icono" name="person-circle-outline"></ion-icon>
             <div class="usuario__info">
                 <div class="usuario__nombre-email">
-                    <div class="usuario__nombre">sldeny</div>
-                    <div class="usuario__email">sldeny@gmail.com</div>
+                    <!-- <div class="usuario__nombre">sldeny</div>
+                    <div class="usuario__email">sldeny@gmail.com</div> -->
+                    <p> <a href="inicioSecion.html" class="btn gradient-text">Iniciar Sesion</a></p>
                 </div>
                 <ion-icon name="ellipsis-vertical-outline"></ion-icon>
             </div>
@@ -90,8 +88,64 @@
 
     <!-- header -->
     <header class="header contenedor">
+
+        <!-- dropdown de estaciones -->
+        <nav class="nav__dropdown">
+            <!-- Primavera -->
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Primavera</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Blusas</a></li>
+                        <li><a class="dropdown__link" href="">Vestidos</a></li>
+                        <li><a class="dropdown__link" href="">Faldas</a></li>
+                        <li><a class="dropdown__link" href="">Pantalones</a></li>
+                    </ul>
+                </li>
+            </ul> 
+            <!-- Verano -->
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Verano</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Blusas</a></li>
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Vestidos</a></li>
+                        <li><a class="dropdown__link" href="">Shorts</a></li>
+                    </ul>
+                </li>
+            </ul> 
+            <!-- Otoño -->
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Otoño</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Sueteres</a></li>
+                        <li><a class="dropdown__link" href="">Chamarras</a></li>
+                        <li><a class="dropdown__link" href="">Blusas</a></li>
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Pantalones</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Invierno -->
+            <ul class="dropdown">
+                <li class="dropdown__contenedor">
+                    <a class="dropdown__boton" href="">Invierno</a>
+                    <ul class="dropdown__desplegable">
+                        <li><a class="dropdown__link" href="">Sueteres</a></li>
+                        <li><a class="dropdown__link" href="">Chamarras</a></li>
+                        <li><a class="dropdown__link" href="">Camisas</a></li>
+                        <li><a class="dropdown__link" href="">Pantalones</a></li>
+                    </ul>
+                </li>
+            </ul> <!-- .dropdown -->
+        </nav>
+
+        <!-- buscador -->
         <div class="buscador">
-            <input class="buscador__texto" type="text" placeholder="Busca aqui">
+            <input class="buscador__texto" type="text" placeholder="Buscar">
             <button class="buscador__boton">
                 <ion-icon class="buscador__icono" name="search-outline"></ion-icon>
             </button>
@@ -104,120 +158,89 @@
     </section>
 
     <!-- main -->
-    <main class="contenedor main">
+    <main class="contenedor">
 
-        <div class="table">
+        <!-- seccion apartados-->
+        <section>
+            <!-- cartas apartadas-->
+            <div class="cartas">
+                <!-- carta apartada-->
+                <div class="carta">
+                    <img class="carta__imagen" src="img/ropita1.jpg" alt="ropa infantil">
+                    <div class="carta__info">
+                        <p class="carta__nombre">Sueter de osito</p>
+                        <div class="carta__talla-precio">
+                            <div class="carta__talla">
+                                <p>Talla:</p>
+                                <p class="carta__texto">3M</p>
+                            </div>
+                            <div class="carta__precio">
+                                <p>Precio:</p>
+                                <p class="carta__texto">$200</p>
+                            </div>
+                        </div>
 
-            <section class="table__header">
-                <h1 class="nosotros__titulo__nombre">Apartados</h1>
-                <div class="input-group">
-                    <input class="buscar" type="text" placeholder="Filtrar">
-                    <ion-icon class="buscador__icono" name="search-outline"></ion-icon>
+                        <div>
+                            <a class="carta__apartar" href="">
+                                <ion-icon class="link__icono link__icono__ch " name="cube-outline"></ion-icon>
+                                Apartado por ti
+                            </a>
+                        </div>
+
+                        <div class="carta__botones">
+                            <a class="carta__boton" href="favoritos.html">
+                                <ion-icon class="" name="star-outline"></ion-icon>
+                            </a>
+                            <a class="carta__boton" href="detallesProducto.html">
+                                <ion-icon class="" name="information-circle-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </section>
-            <section class="table__body">
-                <table>
-                    <thead>
-                        <tr>
-                            <th> id </th>
-                            <th> Imagen </th>
-                            <th> Nombre </th>
-                            <th> descripcion </th>
-                            <th> Precio </th>
-                            <th> Estado </th>
-                            <th> Fecha </th>
-                            <th> Accion </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td> 1 </td>
-                            <td>
-                                <img class="" src="img/ropita1.jpg" alt="Imagen Producto">
-                            </td>
-                            <td> Sueter </td>
-                            <td>
-                                <p>Sueter de osito</p>
-                            </td>
-                            <td> <strong>$200</strong> </td>
-                            <td>
-                                <p class="estatus disponible">
-                                    Disponible
-                                </p>
-                            </td>
-                            <td> 17 Dec, 2024 </td>
-                            <td> Eliminar </td>
-                            
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td>
-                                <img class="" src="img/ropita1.jpg" alt="Imagen Producto">
-                            </td>
-                            <td> Playera </td>
-                            <td>
-                                <p>Playera roja</p>
-                            </td>
-                            <td> <strong>$200</strong> </td>
-                            <td>
-                                <p class="estatus cancelado">
-                                    Cancelado
-                                </p>
-                            </td>
-                            <td> 24 Agu, 2024 </td>
-                            <td> Eliminar </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td>
-                                <img class="" src="img/ropita1.jpg" alt="Imagen Producto">
-                            </td>
-                            <td> Short </td>
-                            <td>
-                                <p>Short corto</p>
-                            </td>
-                            <td> <strong>$200</strong> </td>
-                            <td>
-                                <p class="estatus pendiente">
-                                    Pendiente
-                                </p>
-                            </td>
-                            <td> 18 Feb, 2024 </td>
-                            <td> Eliminar </td>
-                        </tr>
-                        <tr>
-                            <td> 1 </td>
-                            <td>
-                                <img class="" src="img/ropita1.jpg" alt="Imagen Producto">
-                            </td>
-                            <td> Gorra </td>
-                            <td>
-                                <p>Gorra de niño</p>
-                            </td>
-                            <td> <strong>$200</strong> </td>
-                            <td>
-                                <p class="estatus apartado">
-                                    Apartado
-                                </p>
-                            </td>
-                            <td> 01 Sep, 2024 </td>
-                            <td> Eliminar </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </div>
-
+                                
+        </section>
     </main>
 
-
-    <footer class="footer contenedor">
-        <h3>DerechosReservados <span>Mi Mundo</span></h3>
+    <!-- footer -->
+    <footer class="contenedor">
+        <div class="footer" id="acomodoFooter">
+            <h3>DerechosReservados <span>Mi Mundo</span></h3>
+        </div>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="js/apartados.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

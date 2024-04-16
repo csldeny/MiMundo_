@@ -98,7 +98,7 @@ h3 {
     border-radius: 1rem;
     background-color: var(--negro);
     color: var(--blanco);
-    cursor: pointer;
+    text-decoration: none;
 }
 
 /* ----> iconos */
@@ -334,6 +334,11 @@ h3 {
     width: 6rem;
 }
 
+.hiden {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
 /* ----> imagen principal */
 .imagen__principal {
     background-image: url(../img/ropita1.jpg);
@@ -409,9 +414,11 @@ h3 {
     line-height: 1.1;
 }
 
+
+
 .carta__imagen {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .carta__info {
@@ -469,7 +476,7 @@ h3 {
 
 .carta__botones {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 4rem;
     padding: 1rem;
