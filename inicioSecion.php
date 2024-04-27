@@ -13,7 +13,13 @@
         <div class="contenedor">
             <div class="box">
                 <h3>Bienvenido</h3>
-                <form action="">
+
+                <?php
+                    
+                ?>
+
+
+                <form method="$_POST" action="">
                     <div class="input-box">
                         <input type="text" placeholder="Correo" class="input">
                     </div>
@@ -23,9 +29,9 @@
                             <a href="recuperarCuenta.html" class="gradient-text">Haz olvidado tu Contraseña?</a>
                         </div>
                     </div>
-                    <a href="index.html" type="submit" class="btn gradient-text">Iniciar Sesión</a>
+                    <a href="index.php" type="submit" class="btn gradient-text">Iniciar Sesión</a>
                 </form>
-                <p>No tienes cuenta? <a href="crearCuenta.html" class="gradient-text">Registrate</a></p>
+                <p>No tienes cuenta? <a href="crearCuenta.php" class="gradient-text">Registrate</a></p>
             </div>
         </div>
     </seccion>

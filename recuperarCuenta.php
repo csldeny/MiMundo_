@@ -18,7 +18,7 @@
                     </div>
                     <button type="submit" class="btn">Enviar Codigo</button>
                 </form>
-                <p>No tienes cuenta? <a href="crearCuenta.html" class="gradient-text">Crear Cuenta</a></p>
+                <p>No tienes cuenta? <a href="crearCuenta.php" class="gradient-text">Crear Cuenta</a></p>
             </div>
         </div>
     </seccion>
