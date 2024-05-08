@@ -11,7 +11,7 @@
             <ion-icon class="boton__icono" name="add-outline"></ion-icon>
             <span class="boton__span">Inbox</span>
         </a>
-
+    
         <!-- navegacion -->
         <nav class="nav">
             <ul>

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-#fondo{
+/* #fondo{
     background-image: url(../img/MiMundo.jpeg);
     background-size: cover;
     background-position: center center;
@@ -13,10 +13,9 @@
     position: absolute;
     width: 100vw;
     z-index: -1;
-}
+} */
 
 body{
-    
     background-color: #008b8b;
     color: #e7ebda;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -37,7 +36,6 @@ a{
     background-clip: text;
     color: transparent;
 }
-
 
 .form-main{
     min-height: 100vh;
@@ -145,6 +143,27 @@ a{
     box-shadow: 0 0 1.5rem 0.3rem rgba(194, 9, 178, 0.5);
     background-color: rgba(0, 0, 0, 0.400);
 }
+
+.inputpassword{
+    display: flex;
+}
+
+.buttonVer{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+}
+
+.mensajeInf{
+    display: flex;
+    text-align: start;
+    font-weight: lighter;
+    color: rgb(255, 166, 166);
+}
+    
 
 @media(max-width: 575px){
     body::after,

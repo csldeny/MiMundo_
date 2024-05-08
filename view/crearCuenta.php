@@ -25,7 +25,7 @@
                     </div>
                     <a href="index.html" class="btn gradient-text">Crear Cuenta</a>
                 </form>
-                <p>Ya tienes cuenta? <a href="inicioSecion.html" class="gradient-text">Iniciar Sesion</a></p>
+                <p>Ya tienes cuenta? <a href="inicioSecion.php" class="gradient-text">Iniciar Sesion</a></p>
             </div>
         </div>
     </seccion>

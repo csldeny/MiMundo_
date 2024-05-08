@@ -74,5 +74,16 @@ form div button{
     font-weight: bold;
 }
 
+/* Validaciones formulario */
+form input:invalid{
+    border: 1rem solid blue;
+}
 
+form input:valid{
+    border: 1rem solid purple;
+}
+
+/* form.validado input:invalid, .novalido{
+    border-color: red;
+} */
 

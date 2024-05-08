@@ -35,7 +35,7 @@
         </div>
 
         <div class="nosotros__contenido">
-            <img class="nosotros__img" src="../img/ropita.jpg" alt="">
+            <img class="nosotros__img" src="../img/MiMundoImg.jpg" alt="">
 
             <div class="nosotros__info">
                 <h2>Acerca de Nosotros</h2>
