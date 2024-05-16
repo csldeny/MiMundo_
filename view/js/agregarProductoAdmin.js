@@ -1,4 +1,3 @@
-alert("Le :D")
 
 /* function validacionKeyUp(element){
     txt = element.target;

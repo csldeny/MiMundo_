@@ -11,14 +11,21 @@
 </head>
 
 <body>
-    <!-- menu -->
-    <?php
-    require('../components/menuAdmin.php')
-    ?>
 
-    <!-- header -->
     <?php
-    require('../components/header.php')
+
+    /* menu */
+    require('../components/menuAdmin.php');
+
+    /* header */
+    require('../components/header.php');
+
+    /* Mantenemos la sesion activa */
+    session_start();
+    if (!(isset($_SESSION["correo"]) && strlen($_SESSION["correo"]) > 0)) {
+        header("Location: ../inicioSesion.php");
+    }
+
     ?>
 
     <!-- imagen principal -->

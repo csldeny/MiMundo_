@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Cuenta</title>
-    <link rel="stylesheet" href="css/inicioSecion.css">
+    <link rel="stylesheet" href="css/inicioSesion.css">
 </head>
 <body>
     <div id="fondo"></div>
@@ -25,7 +25,7 @@
                     </div>
                     <a href="index.html" class="btn gradient-text">Crear Cuenta</a>
                 </form>
-                <p>Ya tienes cuenta? <a href="inicioSecion.php" class="gradient-text">Iniciar Sesion</a></p>
+                <p>Ya tienes cuenta? <a href="inicioSesion.php" class="gradient-text">Iniciar Sesion</a></p>
             </div>
         </div>
     </seccion>

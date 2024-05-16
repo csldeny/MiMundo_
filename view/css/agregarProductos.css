@@ -75,12 +75,24 @@ form div button{
 }
 
 /* Validaciones formulario */
+.mensajeInf {
+    display: flex;
+    text-align: start;
+    font-weight: lighter;
+    color: rgb(255, 166, 166);
+    display: none;
+}
+
 form input:invalid{
-    border: 1rem solid blue;
+    .mensajeInf{
+        display: block;
+    }
 }
 
 form input:valid{
-    border: 1rem solid purple;
+    .mensajeInf{
+        display: none;
+    }
 }
 
 /* form.validado input:invalid, .novalido{

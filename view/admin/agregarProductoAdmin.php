@@ -46,21 +46,20 @@
 
                     <div>
                         <label for="">Producto</label>
-                        <!-- <input type="text" id="txtProducto" pattern="[a-z]{5,40}" minlength="5" maxlength="40" required> -->
-                        <input type="text" id="txtProducto" minlength="5" maxlength="40" required>
-                        <p>Ingresa el nombre del producto</p>
+                        <input type="text" id="txtProducto" pattern="^[a-z]{5,40}$" minlength="5" maxlength="40" required>
+                        <p class="mensajeInf">Ingresa el nombre del producto</p>
                     </div>
 
                     <div>
                         <label for="">Talla / Edad</label>
                         <input type="text" id="txtTalla" minlength="1" maxlength="10" required>
-                        <p>Ingresa un formato valido</p>
+                        <p class="mensajeInf">Ingresa un formato valido</p>
                     </div>
 
                     <div>
                         <label for="">Precio</label>
                         <input type="number" id="txtPrecio" minlength="1" maxlength="10" required>
-                        <p>Ingresa solo numeros</p>
+                        <p class="mensajeInf">Ingresa solo numeros</p>
                     </div>
                     
                     <div>

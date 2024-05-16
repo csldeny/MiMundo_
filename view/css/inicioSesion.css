@@ -1,21 +1,11 @@
-*{
+/* Estilos Generales */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* #fondo{
-    background-image: url(../img/MiMundo.jpeg);
-    background-size: cover;
-    background-position: center center;
-    filter: blur(5px);
-    height: 100vh;
-    position: absolute;
-    width: 100vw;
-    z-index: -1;
-} */
-
-body{
+body {
     background-color: #008b8b;
     color: #e7ebda;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -25,19 +15,14 @@ body{
     overflow-x: hidden;
 }
 
-a{
+a {
     text-decoration: none;
     font-weight: 500;
     display: inline-block;
 }
 
-.gradient-text{
-    background: linear-gradient(to right, rgb(1, 137, 161), rgb(243, 242, 243));
-    background-clip: text;
-    color: transparent;
-}
-
-.form-main{
+/* Estilos por bloqque */
+seccion {
     min-height: 100vh;
     padding: 60px 15px;
     display: flex;
@@ -46,53 +31,50 @@ a{
     overflow: hidden;
 }
 
-.contenedor{
+/* ---- */
+.contenedor {
     width: 100%;
     max-width: 450px;
     position: relative;
     z-index: 1;
-    
 }
 
-.contenedor h3{
+.contenedor h3 {
     font-size: 28px;
     text-align: center;
     line-height: 1.2;
-    color:  #e7ebda;
+    color: #e7ebda;
     font-weight: 500;
 }
 
-.contenedor form{
+.contenedor form {
     margin: 25px 0 20px;
 }
 
-.contenedor .input-box{
+.contenedor .input-box {
     margin: 25px;
 }
 
-.contenedor .input{
+.contenedor .input {
     display: block;
     height: 45px;
     width: 100%;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     color: #e7ebda;
     font-family: inherit;
     font-weight: inherit;
-    font-size: 16px;  
-}
-
-.contenedor .input{
+    font-size: 16px;
     outline: none;
 }
 
-.contenedor .inpunt-link{
+.contenedor .inpunt-link {
     margin-top: 10px;
     text-align: right;
 }
 
-.contenedor .btn{
+.contenedor .btn {
     height: 45px;
     width: 100%;
     display: flex;
@@ -111,7 +93,7 @@ a{
     overflow: hidden;
 }
 
-.contenedor .btn::before{
+.contenedor .btn::before {
     content: "";
     position: absolute;
     left: 0;
@@ -122,20 +104,15 @@ a{
     z-index: -1;
 }
 
-.contenedor .btn:hover::before{
+.contenedor .btn:hover::before {
     background-color: rgb(75, 68, 68);
 }
 
-.contenedor p{
+/* .contenedor p {
     text-align: center;
-}
+} */
 
-.contenedor ::placeholder{
-    color: inherit;
-    opacity: 1;
-}
-
-.contenedor .box{
+.contenedor .box {
     border-color: rgb(0, 0, 0);
     border: 1px solid black;
     padding: 40px 50px;
@@ -144,38 +121,62 @@ a{
     background-color: rgba(0, 0, 0, 0.400);
 }
 
-.inputpassword{
+.inputpassword {
     display: flex;
 }
 
-.buttonVer{
+.buttonVer {
+    border: none;
     color: white;
     background: none;
-    border: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    
+    cursor: pointer;
+    border-bottom: 1px solid white;
 }
 
-.mensajeInf{
+.mensajeInf {
     display: flex;
     text-align: start;
     font-weight: lighter;
     color: rgb(255, 166, 166);
+    display: none;
 }
-    
 
-@media(max-width: 575px){
-    body::after,
-    body::before{
-        height: 250px;
-        width: 250px;
-        filter: blur(100px);
-    }
-    .contenedor .box{
-        padding: 30px;
-    }
-    .contenedor h3{
-        font-size: 24px;
-    }
+.gradient-text {
+    background: linear-gradient(to right, rgb(1, 137, 161), rgb(243, 242, 243));
+    background-clip: text;
+    color: transparent;
 }
+
+/* Validciones */
+/*  */
+form.validado input:invalid + p, 
+.novalido + p,
+form.validado p.input-group:has(input:invalid) + p,
+p.input-group:has(.novalido) + p{
+    display: block;
+}
+
+form.validado input:valid + p,
+.valido + p,
+form.validado p.input-group:has(input:valid) + p,
+p.input-group:has(.valido) + p{
+    display: none;
+}
+
+form.validado p:has(.input-group input:valid) + p {
+    display: none;      
+}
+
+form.validado p.input-group:has(input:invalid) + p {
+    display: block;
+}
+
+.valido{
+    display: block;
+}
+
+
+
+

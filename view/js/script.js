@@ -1,4 +1,3 @@
-alert("Hola")
 /* -------------------------------------------------------------------------------------------- */
 /* Inicialindo los datos */
 function inicializarDatos() {
