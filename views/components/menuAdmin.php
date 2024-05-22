@@ -6,6 +6,7 @@
     if (!(isset($_SESSION["correo"]) && strlen($_SESSION["correo"]) > 0)) {
         header("Location: ../log/inicioSesion.php");
     }
+
     //unset($_SESSION['correo']);
 ?>
 

@@ -13,6 +13,8 @@
     <section>
 
         <?php
+        require_once("../../data/DAOUsuario.php");
+
         // Inicializamos variables vacias
         $correo = $contrasenia =  $validado = $error = "";
 
@@ -26,20 +28,24 @@
                 strlen($contrasenia) >= 8 && strlen($contrasenia) <= 50) 
             {
 
+                /* Instanciamos el metodo autenticar */
+                $dao= new DAOUsuario();
+                $usuario=$dao->autenticar($correo,$contrasenia);
+
                 /* Abrimos la sesion */
                 session_start();
 
                 /* Verificamos que el usuario exista */
-                if ($correo === "admin@gmail.com" && $contrasenia === "12345678") {
-
+                if ($usuario && $usuario->rol == "admin") {
                     /* Abrimos la sesion del administrador */
                     $_SESSION["correo"] = $correo;
+                    $_SESSION["rol"] = $usuario->rol;
                     header("Location: ../admin/indexAdmin.php");
 
-                }elseif($correo === "user@gmail.com" && $contrasenia === "87654321"){
-
+                }elseif($usuario && $usuario->rol == "user"){
                     /* Abrimos la sesion del usuario */
                     $_SESSION["correo"] = $correo;
+                    $_SESSION["rol"] = $usuario->rol;
                     header("Location: ../index.php");
 
                 }else{

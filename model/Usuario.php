@@ -4,8 +4,9 @@ class Usuario{
     public $nombre="";
     public $apellido1= "";
     public $apellido2= "";
-    public $correo="";
+    public $email="";
     public $contrasenia="";
     public $genero="";
+    public $rol="";
 }
 ?>
