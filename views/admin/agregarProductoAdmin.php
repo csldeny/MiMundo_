@@ -16,11 +16,78 @@
 
 <body>
     <?php
-        // menu
-        require('../components/menuAdmin.php');
+    // menu
+    require('../components/menuAdmin.php');
 
-        // header
-        require('../components/header.php');
+    // header
+    require('../components/header.php');
+    
+    /* Code DAO */
+    require_once("../../data/DAOProducto.php");
+    $producto = new Producto();
+    $error = "";
+    var_dump($_POST);
+
+    if (isset($_GET["idProducto"]) && is_numeric($_GET["idProducto"])) {
+        //Cuando se recibe el id entonces hay que obtener los datos del usuario
+        $producto = (new DAOProducto())->obtenerUno((int) $_GET["idProducto"]);
+
+        /* Pedir Explicacion */
+        if ($producto == null) {
+            $_SESSION["msg"] = "alert-warning--Usuario no encontrado";
+            header("Location: listaUsuarios.php");
+        }
+        
+    } elseif (count($_POST) > 0) {
+        //Verificar si llegaron datos por POST es porque se está agregando o editando
+        $producto->idProducto = $_POST["txtId"];
+        $producto->producto = $_POST["txtNombre"];
+        $producto->talla = $_POST["txtApellido1"];
+        $producto->precio = $_POST["txtApellido2"];
+        $producto->categoria = $_POST["txtEmail"];
+        $producto->temporada = $_POST["txtPassword"];
+
+        $validado = "";
+
+        //Validar los datos
+        if (
+            strlen($producto->producto) >= 2 && strlen($producto->producto) <= 30 &&
+            strlen($usuario->apellido1) >= 2 && strlen($usuario->apellido1) <= 30 &&
+            strlen($usuario->apellido2) >= 2 && strlen($usuario->apellido2) <= 30 &&
+            filter_var($usuario->correo, FILTER_VALIDATE_EMAIL) != false &&
+            ($usuario->rol == 'admin' || $usuario->rol == 'empleado' || $usuario->rol == 'cliente') &&
+            ($usuario->genero == 'M' || $usuario->genero == 'F' || $usuario->genero == 'I')
+        ) {
+
+            $dao = new DAOUsuario();
+            if ($usuario->id == 0) {
+                //Revisar la contraseña
+                if (strlen($usuario->contrasenia) >= 6 && strlen($usuario->contrasenia) <= 20) {
+                    if ($usuario = $dao->agregar($usuario) > 0) {
+                        $_SESSION["msg"] = "alert-successs--Usuario almacenado correctamente";
+                        header("Location: listaUsuarios.php");
+                    } else {
+                        $error = '<div class="alert alert-danger alert-dismissible fade show">
+            El usuario no se ha podido almacenar <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+                    }
+                } else {
+                    $validado = "validado";
+                }
+            } else {
+                if ($usuario = $dao->editar($usuario)) {
+                    $_SESSION["msg"] = "alert-successs--Usuario almacenado correctamente";
+                    header("Location: listaUsuarios.php");
+                } else {
+                    $error = '<div class="alert alert-danger alert-dismissible fade show">
+          El usuario no se ha podido almacenar <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>';
+                }
+            }
+        } else {
+            $validado = "validado";
+        }
+    }
     ?>
 
     <!-- imagen principal -->
@@ -62,7 +129,7 @@
                         <input type="number" id="txtPrecio" minlength="1" maxlength="10" required>
                         <p class="mensajeInf">Ingresa solo numeros</p>
                     </div>
-                    
+
                     <div>
                         <label for="">Temporada</label>
                         <select>
@@ -72,7 +139,7 @@
                             <option value="">Invierno</option>
                         </select>
                     </div>
-                    
+
                     <div>
                         <label for="">Categoria</label>
                         <select name="" id="">
@@ -86,25 +153,26 @@
                     </div>
 
                     <div>
-                        <button type="submit" id="btnAgregar" href = "indexAdmin.html">Agregar</button>
+                        <button type="submit" id="btnAgregar" href="indexAdmin.html">Agregar</button>
                     </div>
 
                 </form>
-                
+
             </div>
 
-        </div>     
+        </div>
 
     </main>
 
     <?php
-        // footer
-        require('../components/footer.php')
+    // footer
+    require('../components/footer.php')
     ?>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="../js/agregarProductoAdmin.js"></script>
+    <script src="../js/cerrarSesionAdmin.js"></script>
 </body>
 
 </html>

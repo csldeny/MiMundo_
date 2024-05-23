@@ -3,7 +3,9 @@
     session_start();
 
     //echo $_SESSION["correo"];
-    if (!(isset($_SESSION["correo"]) && strlen($_SESSION["correo"]) > 0)) {
+    if($_SESSION["rol"] !="admin"){
+        header("Location: ../index.php");
+    }elseif (!(isset($_SESSION["correo"]) && strlen($_SESSION["correo"]) > 0)) {
         header("Location: ../log/inicioSesion.php");
     }
 
@@ -75,7 +77,7 @@
         <div class="usuario__info">
             <div class="usuario__nombre-email">
                 <?php
-                echo '<div class="usuario__nombre">' . "algo" . '</div>
+                echo '<div class="usuario__nombre">' . $_SESSION["nombre"] . '</div>
                     <div class="usuario__email">' . $_SESSION["correo"] . '</div>'
                 ?>
             </div>

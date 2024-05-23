@@ -42,6 +42,7 @@
         <section>
             <!-- cartas -->
             <div class="cartas">
+
                 <!-- carta -->
                 <!-- <div class="carta">
                     <div>
@@ -74,6 +75,53 @@
 
                     </div>
                 </div> -->
+
+                <?php
+                    require_once("../../data/DAOProducto.php");
+                    
+                    $lista = (new DAOProducto())->obtenerTodos();
+                    foreach ($lista as $producto) {
+                        echo "<div class=\"carta\">
+
+                                <div>
+                                    <img class=\"carta__imagen\" src=\"../img/ropita1.jpg\" alt=\"ropa infantil\">
+                                </div>
+
+                                <div class=\"carta__info\">
+                                    <p class=\"carta__nombre\">$producto->producto</p>
+
+                                    <div class=\"carta__talla-precio\">
+
+                                        <div class=\"carta__talla\">
+                                            <p>Talla:</p>
+                                            <p class=\"carta__texto\">$producto->talla</p>
+                                        </div>
+
+                                        <div class=\"carta__precio\">
+                                            <p>Precio:</p>
+                                            <p class=\"carta__texto\">$$producto->precio</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div>   
+                                        <a class=\"carta__apartar\" href=\"\">
+                                            <ion-icon class=\"link__icono link__icono__ch \" name=\"cube-outline\"></ion-icon>
+                                            Editar
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <a class=\"carta__apartar\" href=\"\">
+                                            <ion-icon class=\"link__icono link__icono__ch \" name=\"cube-outline\"></ion-icon>
+                                            Eliminar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>";
+                    }
+                ?>
+                
         </section>
     </main>
 

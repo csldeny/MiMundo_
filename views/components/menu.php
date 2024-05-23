@@ -3,9 +3,13 @@
     session_start();
 
     //echo $_SESSION["correo"];
-    /* if (!(isset($_SESSION["correo"]) && strlen($_SESSION["correo"]) > 0)) {
-        header("Location: ../inicioSesion.php");
-    } */
+    if(isset($_SESSION["correo"])){
+        if($_SESSION["rol"] !="user"){
+            header("Location: admin/indexAdmin.php");
+        }elseif(!(isset($_SESSION["correo"]) && strlen($_SESSION["correo"]) > 0)) {
+            header("Location: log/inicioSesion.php");
+        }
+    }
 
     //unset($_SESSION['correo']);
 ?>
@@ -78,7 +82,7 @@
                     <div class="usuario__email">sldeny@gmail.com</div> -->
                 <?php
                     if(isset($_SESSION["correo"])){
-                        echo '<div class="usuario__nombre">' . "algo" . '</div>
+                        echo '<div class="usuario__nombre">' . $_SESSION["nombre"] . '</div>
                         <div class="usuario__email">' . $_SESSION["correo"] . '</div>';
                     }else{
                         echo '<p> <a href="log/inicioSesion.php" class="boton__InicioSesion">Iniciar Sesion</a></p>';
@@ -89,6 +93,7 @@
         </div>
     </div>
     <?php
+
         if(isset($_SESSION["correo"])){
             echo '<div>
                     <button type="button" class="boton__cerrar" id="botonCerrar">

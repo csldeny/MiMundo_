@@ -40,12 +40,14 @@
                     /* Abrimos la sesion del administrador */
                     $_SESSION["correo"] = $correo;
                     $_SESSION["rol"] = $usuario->rol;
+                    $_SESSION["nombre"] = $usuario->nombre;
                     header("Location: ../admin/indexAdmin.php");
 
                 }elseif($usuario && $usuario->rol == "user"){
                     /* Abrimos la sesion del usuario */
                     $_SESSION["correo"] = $correo;
                     $_SESSION["rol"] = $usuario->rol;
+                    $_SESSION["nombre"] = $usuario->nombre;
                     header("Location: ../index.php");
 
                 }else{

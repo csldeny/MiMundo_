@@ -1,7 +1,16 @@
 <?php
 //importa la clase conexión y el modelo para usarlos
 require_once 'conexion.php'; 
-require_once '../model/Usuario.php';
+require_once '../../model/Usuario.php';
+
+$modelo_Usuario = '../../model/Usuario.php';
+
+if (file_exists($modelo_Usuario)) {
+    require_once($modelo_Usuario);
+} else {
+    echo "El archivo $modelo_Usuario no existe.";
+}
+
 
 class DAOUsuario
 {
@@ -131,7 +140,7 @@ class DAOUsuario
             $obj->nombre = $fila->nombre;
             $obj->apellido1 = $fila->apellido1;
             $obj->apellido2 = $fila->apellido2;
-            //$obj->email = $fila->email;
+            $obj->email = $fila->email;
             $obj->genero = $fila->genero;
             //$obj->telefono = $fila->telefono;
             $obj->rol = $fila->rol;
@@ -184,7 +193,6 @@ class DAOUsuario
                     apellido2 = ?,
                     email = ?,
                     genero = ?,
-                    telefono = ?,
                     contrasenia = sha224(?)
                     WHERE id = ?;";
 
@@ -195,7 +203,7 @@ class DAOUsuario
 				array($obj->nombre,
                       $obj->apellido1,
                       $obj->apellido2,
-					  //$obj->email,
+					  $obj->email,
                       $obj->genero,
                       $obj->contrasenia,
                       //$obj->telefono,
@@ -226,7 +234,6 @@ class DAOUsuario
                 apellido2,
                 email,
                 genero,
-                telefono,
                 contrasenia)
                 VALUES
                 (:nombre,
@@ -234,7 +241,6 @@ class DAOUsuario
                 :apellido2,
                 :email,
                 :genero,
-                :telefono,
                 sha224(:contrasenia));";
                 
             $this->conectar();
@@ -243,7 +249,7 @@ class DAOUsuario
                     ':nombre'=>$obj->nombre,
                  ':apellido1'=>$obj->apellido1,
                  
-                 //':email'=>$obj->email,
+                 ':email'=>$obj->email,
                  ':genero'=>$obj->genero,
                  //':telefono'=>$obj->telefono,
                  ':apellido2'=>$obj->apellido2,
@@ -263,4 +269,3 @@ class DAOUsuario
         }
 	}
 }
-    

@@ -157,7 +157,7 @@ function cargarTabla() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    inicializarDatos();
-    cargarTabla();
+    //inicializarDatos();
+    //cargarTabla();
 
 }) 
