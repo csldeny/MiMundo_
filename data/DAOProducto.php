@@ -3,13 +3,7 @@
 require_once 'conexion.php';
 require_once '../../model/Productos.php';
 
-$modelo_Producto = '../model/Productos.php';
 
-if (file_exists($modelo_Producto)) {
-    require_once($modelo_Producto);
-} else {
-    echo "El archivo $modelo_Producto no existe.";
-}
 
 
 class DAOProducto
@@ -42,11 +36,11 @@ class DAOProducto
 
             //$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
             $resultado = $sentenciaSQL->fetchAll(PDO::FETCH_OBJ);
-
+            
             /*Se recorre el cursor para obtener los datos*/
             foreach ($resultado as $fila) {
                 $obj = new Producto();
-                $obj->idProducto = $fila->idProducto;
+                $obj->idProducto = $fila->idproducto;
                 $obj->producto = $fila->producto;
                 $obj->talla = $fila->talla;
                 $obj->precio = $fila->precio;

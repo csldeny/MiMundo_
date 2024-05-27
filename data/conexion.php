@@ -6,7 +6,7 @@ class Conexion
 {
     
     private static $servidor = 'localhost' ;
-    private static $db = 'pwa' ;
+    private static $db = 'mimundo' ;
     private static $usuario = 'postgres';
     private static $password = '1234';
     private static $puerto = '5432';

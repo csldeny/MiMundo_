@@ -22,7 +22,9 @@
                     </div>
                     <div class="input-box">
                         <input type="password" placeholder="Contraseña" class="input">
-                        
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Sexo">
                     </div>
                     <a href="index.html" class="btn gradient-text">Crear Cuenta</a>
                 </form>

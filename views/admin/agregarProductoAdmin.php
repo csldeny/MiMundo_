@@ -22,24 +22,36 @@
     // header
     require('../components/header.php');
     
-    /* Code DAO */
+    // Obtenemos el DAO
     require_once("../../data/DAOProducto.php");
+
+    // Instanciamos 
     $producto = new Producto();
+
+    // Inicializamos el error en blanco
     $error = "";
+
     var_dump($_POST);
 
+    // Si en la peticion es un get y envian solo el id y es numerico
+    // Entonces el usuario quiere editar, por lo que se obtendran los datos del usuario
     if (isset($_GET["idProducto"]) && is_numeric($_GET["idProducto"])) {
-        //Cuando se recibe el id entonces hay que obtener los datos del usuario
+
+        // se asigna el objeto a la variable productos
         $producto = (new DAOProducto())->obtenerUno((int) $_GET["idProducto"]);
 
-        /* Pedir Explicacion */
-        if ($producto == null) {
-            $_SESSION["msg"] = "alert-warning--Usuario no encontrado";
-            header("Location: listaUsuarios.php");
+        // valida que exista el producto
+        // que otro admin no lo halla eliminado
+        if($producto == null){
+            echo "Producto inexistente";
+            header("Location: indexAdmin.php");
         }
-        
+
+      // Si en la peticion es post y es mayor a 0 
+      // Entonces agrega 
     } elseif (count($_POST) > 0) {
-        //Verificar si llegaron datos por POST es porque se está agregando o editando
+
+        // Asignamos el
         $producto->idProducto = $_POST["txtId"];
         $producto->producto = $_POST["txtNombre"];
         $producto->talla = $_POST["txtApellido1"];
@@ -114,7 +126,7 @@
 
                     <div>
                         <label for="">Producto</label>
-                        <input type="text" id="txtProducto" pattern="^[a-z]{5,40}$" minlength="5" maxlength="40" required>
+                        <input type="text" id="txtProducto" pattern="^[a-zA-Z]{5,40}$" minlength="5" maxlength="40" required>
                         <p class="mensajeInf">Ingresa el nombre del producto</p>
                     </div>
 

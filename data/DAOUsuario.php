@@ -1,7 +1,7 @@
 <?php
 //importa la clase conexión y el modelo para usarlos
 require_once 'conexion.php'; 
-require_once '../../model/Usuario.php';
+//require_once '../model/Usuario.php';
 
 $modelo_Usuario = '../../model/Usuario.php';
 
