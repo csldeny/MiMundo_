@@ -26,7 +26,6 @@
     // Obtenemos el DAO
     require_once("../../data/DAOProducto.php");
 
-    var_dump($_POST["idProducto"]);
     // Revisamos si llega un id que indica que se quiere eliminar un elemento
     if (isset($_POST["idProducto"]) && is_numeric($_POST["idProducto"])) {
 
@@ -136,7 +135,6 @@
 
                                         <form method='post' action='indexAdmin.php'>
                                             <input type='hidden' name='idProducto' value='$producto->idProducto'>
-                                            echo $producto->idProducto
                                             <button type='submit' class='carta__eliminar' name='$producto->idProducto' id='btnEliminar'>
                                                 <ion-icon class='link__icono link__icono__ch' name='cube-outline'></ion-icon>
                                                 Eliminar

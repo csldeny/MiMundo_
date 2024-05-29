@@ -28,13 +28,15 @@
     // Inicializamos el error en blanco
     $error = "";
 
-    var_dump($_POST);
-    echo "<br/>";
-
+    //var_dump($_POST);
     // Si en la peticion es un get y envian solo el id y es numerico
     // Entonces el usuario quiere editar, por lo que se obtendran los datos del usuario
     // GET 
     if (isset($_GET["idProducto"]) && is_numeric($_GET["idProducto"])) {
+
+        //var_dump($_POST);
+        //echo "Va a editar";
+        //echo "<br/>";
 
         // se asigna el objeto a la variable productos
         $producto = (new DAOProducto())->obtenerUno((int) $_GET["idProducto"]);
@@ -50,9 +52,9 @@
         // POST hace el envio de datos encriptado sin limite de datos
     } elseif (count($_POST) > 0) {
 
-        var_dump($_POST);
-        echo "<br/>";
-        echo "<br/>";
+        //var_dump($_POST);
+        //echo "Va a agregar";
+        //echo "<br/>";
 
         // Asignamos el valor introducido al atributo del objeto
         $producto->idProducto = $_POST["idName"];
@@ -61,10 +63,6 @@
         $producto->precio = $_POST["precioName"];
         $producto->categoria = $_POST["categoriaName"];
         $producto->temporada = $_POST["temporadaName"];
-
-        var_dump($producto);
-        echo "<br/>";
-        echo "<br/>";
 
         // Inicializamos validacion vacia
         $validado = "";
@@ -85,10 +83,16 @@
                 $producto->temporada  == 'Invierno')
         ) {
 
+            //var_dump($_POST);
+            //echo "<br/>";
+
             // Hacemos instancia del DAOProducto
             $dao = new DAOProducto();
 
             if ($producto->idProducto == 0) {
+
+                //var_dump($_POST);
+                //echo "<br/>";
 
                 //Agregamos
                 if ($producto = $dao->agregar($producto) > 0) {
