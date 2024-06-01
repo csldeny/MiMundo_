@@ -2,6 +2,7 @@
     /* Mantenemos la sesion activa */
     session_start();
 
+
     //echo $_SESSION["correo"];
     if(isset($_SESSION["correo"])){
         if($_SESSION["rol"] !="user"){

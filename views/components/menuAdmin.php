@@ -1,15 +1,15 @@
 <?php
-    /* Mantenemos la sesion activa */
-    session_start();
+/* Mantenemos la sesion activa */
+session_start();
 
-    //echo $_SESSION["correo"];
-    if($_SESSION["rol"] !="admin"){
-        header("Location: ../index.php");
-    }elseif (!(isset($_SESSION["correo"]) && strlen($_SESSION["correo"]) > 0)) {
-        header("Location: ../log/inicioSesion.php");
-    }
+//echo $_SESSION["correo"];
+if ($_SESSION["rol"] != "admin") {
+    header("Location: ../index.php");
+} elseif (!(isset($_SESSION["correo"]) && strlen($_SESSION["correo"]) > 0)) {
+    header("Location: ../log/inicioSesion.php");
+}
 
-    //unset($_SESSION['correo']);
+//unset($_SESSION['correo']);
 ?>
 
 <div class="menu">
@@ -65,6 +65,19 @@
                     <span class="link__span">Nosotros</span>
                 </a>
             </li>
+
+            <!-- ------------------------------------------------------------------------------- -->
+
+            <li class="nav__item">
+                <a class="link" href="usuariosAdmin.php">
+                    <ion-icon class="link__icono" name="Person-outline"></ion-icon>
+                    <span class="link__span">Usuarios</span>
+                </a>
+            </li>
+
+            <!-- ------------------------------------------------------------------------------- -->
+
+
         </ul>
     </nav>
 

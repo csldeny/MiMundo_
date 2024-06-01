@@ -16,11 +16,14 @@
 
 <body>
     <?php
-        // menu
-        require("components/menu.php");
+    // menu
+    require("components/menu.php");
 
-        // header
-        require("components/header.php");
+    // header
+    require("components/header.php");
+
+    // DAO
+    require_once('../data/DAOProductoUser.php');
     ?>
 
     <!-- imagen principal -->
@@ -36,7 +39,7 @@
             <!-- cartas apartadas-->
             <div class="cartas">
                 <!-- carta apartada-->
-                <div class="carta">
+                <!-- <div class="carta">
                     <img class="carta__imagen" src="img/ropita1.jpg" alt="ropa infantil">
                     <div class="carta__info">
                         <p class="carta__nombre">Sueter de osito</p>
@@ -59,14 +62,58 @@
                         </div>
 
                     </div>
-                </div>
-            </div>            
+                </div> -->
+
+                <?php
+
+                $id = $_SESSION["id"];
+
+                //echo $id;
+
+                require_once("../data/DAOProductoUser.php");
+
+                $lista = (new DAOProducto())->mostrarFavoritos($id);
+                foreach ($lista as $producto) {
+                    echo    "<div class='carta'>
+
+                                <div>
+                                    <img class='carta__imagen' src='img/ropita1.jpg' alt='ropa infantil'>
+                                </div>
+                                
+                            <div class='carta__info'>
+                                <p class='carta__nombre'>$producto->producto</p>
+                                <div class='carta__talla-precio'>
+                                    <div class='carta__talla'>
+                                        <p>Talla:</p>
+                                        <p class='carta__texto'>$producto->talla</p>
+                                    </div>
+                                    <div class='carta__precio'>
+                                        <p>Precio:</p>
+                                        <p class='carta__texto'>$$producto->precio</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a class='carta__apartar' href=''>
+                                        <ion-icon class='link__icono link__icono__ch' name='star-outline'></ion-icon>
+                                        Te gusto este producto
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>";
+                }
+                ?>
+
+
+            </div>
+
         </section>
     </main>
 
     <?php
-        // footer
-        require("components/footer.php");
+    // footer
+    require("components/footer.php");
     ?>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -75,58 +122,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

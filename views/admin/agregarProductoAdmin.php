@@ -150,19 +150,19 @@
                     <!-- Inputs -->
                     <div>
                         <label for="">Producto</label>
-                        <input type="text" id="txtProducto" name="productoName" value="<?= $producto->producto ?>" pattern="^[ a-zA-Z0-9]{5,40}$" minlength="5" maxlength="40" required>
+                        <input type="text" id="txtProducto" name="productoName" value="<?= $producto->producto ?>" pattern="^[ a-zA-Z0-9]{5,40}$" minlength="5" maxlength="40"  >
                         <p class="mensajeInf">Ingresa el nombre del producto</p>
                     </div>
 
                     <div>
                         <label for="">Talla / Edad</label>
-                        <input type="text" id="txtTalla" name="tallaName" value="<?= $producto->talla ?>" minlength="1" maxlength="10" required>
+                        <input type="text" id="txtTalla" name="tallaName" value="<?= $producto->talla ?>" minlength="1" maxlength="10"  >
                         <p class="mensajeInf">Ingresa un formato valido</p>
                     </div>
 
                     <div>
                         <label for="">Precio</label>
-                        <input type="number" id="txtPrecio" name="precioName" value="<?= $producto->precio ?>" minlength="1" maxlength="10" required>
+                        <input type="number" id="txtPrecio" name="precioName" value="<?= $producto->precio ?>" minlength="1" maxlength="10"  >
                         <p class="mensajeInf">Ingresa solo numeros</p>
                     </div>
 
@@ -207,7 +207,7 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="../js/agregarProductoAdmin.js"></script>
+    
     <script src="../js/cerrarSesionAdmin.js"></script>
 </body>
 

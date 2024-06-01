@@ -2,7 +2,10 @@
 //importa la clase conexión y el modelo para usarlos
 require_once 'conexion.php';
 
-require_once '../../model/Productos.php';
+require_once '../model/Productos.php';
+
+
+
 
 class DAOProducto
 {
@@ -34,7 +37,7 @@ class DAOProducto
 
             //$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
             $resultado = $sentenciaSQL->fetchAll(PDO::FETCH_OBJ);
-            
+
             /*Se recorre el cursor para obtener los datos*/
             foreach ($resultado as $fila) {
                 $obj = new Producto();
@@ -55,7 +58,7 @@ class DAOProducto
         } finally {
             Conexion::desconectar();
         }
-    }   
+    }
 
     /* -------------------------------------------------------------------------- */
     public function obtenerUno($id)
@@ -74,7 +77,7 @@ class DAOProducto
             $fila = $sentenciaSQL->fetch(PDO::FETCH_OBJ);
 
             $obj = new Producto();
-            
+
             $obj->idProducto = $fila->idproducto;
             $obj->producto = $fila->producto;
             $obj->talla = $fila->talla;
@@ -140,7 +143,7 @@ class DAOProducto
             Conexion::desconectar();
         }
     }
-    
+
     /* -------------------------------------------------------------------------- */
     public function agregar(Producto $obj)
     {
@@ -157,6 +160,71 @@ class DAOProducto
                     ':precio' => $obj->precio,
                     ':categoria' => $obj->categoria,
                     ':temporada' => $obj->temporada
+                ));
+
+            $clave = $this->conexion->lastInsertId();
+            return $clave;
+        } catch (Exception $e) {
+            var_dump($e->getMessage());
+            return $clave;
+        } finally {
+
+            Conexion::desconectar();
+        }
+    }
+
+    /* -------------------------------------------------------------------------- */
+    public function mostrarFavoritos($id)
+    {
+        try {
+            $this->conectar();
+
+            $lista = array();
+            //Se arma la sentencia sql para seleccionar todos los favoritos de la base de datos
+            $sentenciaSQL = $this->conexion->prepare("  SELECT p.idProducto, p.producto, p.talla, p.precio
+                                                        FROM favoritos f
+                                                        JOIN productos p ON f.productoID = p.idProducto
+                                                        WHERE f.usuarioID =?;");
+
+            //Se ejecuta la sentencia sql, retorna un cursor con todos los elementos
+            $sentenciaSQL->execute([$id]);
+
+            //$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+            $resultado = $sentenciaSQL->fetchAll(PDO::FETCH_OBJ);
+
+            /*Se recorre el cursor para obtener los datos*/
+            foreach ($resultado as $fila) {
+                $obj = new Producto();
+
+                $obj->producto = $fila->producto;
+                $obj->talla = $fila->talla;
+                $obj->precio = $fila->precio;
+
+                //Agrega el objeto al arreglo, no necesitamos indicar un índice, usa el próximo válido
+                $lista[] = $obj;
+            }
+
+            return $lista;
+        } catch (PDOException $e) {
+            return null;
+        } finally {
+            Conexion::desconectar();
+        }
+    }
+
+    public function agregarFavoritos($id, $idProducto)
+    {
+        $clave = 0;
+        try {
+            $sql = "
+            INSERT INTO favoritos (usuarioID, productoID)
+            VALUES (?, ?)
+            ";
+
+            $this->conectar();
+            $this->conexion->prepare($sql)
+                ->execute(array(
+                    $id,$idProducto
                 ));
 
             $clave = $this->conexion->lastInsertId();

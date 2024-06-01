@@ -41,6 +41,7 @@
                     $_SESSION["correo"] = $correo;
                     $_SESSION["rol"] = $usuario->rol;
                     $_SESSION["nombre"] = $usuario->nombre;
+                    $_SESSION["id"] = $usuario->id;
                     header("Location: ../admin/indexAdmin.php");
 
                 }elseif($usuario && $usuario->rol == "user"){
@@ -48,6 +49,7 @@
                     $_SESSION["correo"] = $correo;
                     $_SESSION["rol"] = $usuario->rol;
                     $_SESSION["nombre"] = $usuario->nombre;
+                    $_SESSION["id"] = $usuario->id;
                     header("Location: ../index.php");
 
                 }else{

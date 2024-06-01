@@ -12,9 +12,11 @@ create Table usuarios(
 	apellido2 varchar(30),
 	email varchar(200) not null unique,
 	contrasenia bytea not null,
-	genero char(1),
+	genero varchar(100),
 	rol tipoUsuario not null
 );
+
+select * from usuarios;
 
 insert into usuarios
 values (default, 'Dennis', 'Silva', 'Lopez', 'dennis@gmail.com', sha224('12345678'),'M', 'admin' );
@@ -26,7 +28,6 @@ insert into usuarios
 values (default, 'Kimberly', 'Silva', 'Lopez', 'kimberly@gmail.com', sha224('12345678'),'F', 'user' );
 
 select * from usuarios;
-
 
 -- Tabla de productos
 drop table productos;
@@ -74,9 +75,27 @@ UPDATE productos SET producto = 'Sueter Rojo', talla = '9M', precio = 200, categ
 INSERT INTO Productos (producto, talla, precio, categoria, temporada)
 VALUES ('Blusa blanca', 'T7', 300, 'blusa', 'verano');
 
+-- Tabla de favoritos
+
+drop table favoritos;
+
+CREATE TABLE favoritos (
+    idFavoritos SERIAL PRIMARY KEY,
+    usuarioID INT REFERENCES usuarios(id) ON DELETE CASCADE,
+    productoID INT REFERENCES productos(idProducto) ON DELETE CASCADE,
+    fecha_agregado TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+select * from favoritos;
+
+INSERT INTO favoritos (usuarioID, productoID)
+VALUES (1, 2) -- Ejemplo: usuario con id 1 y producto con id 2;
 
 
-
+SELECT p.producto, p.talla, p.precio
+FROM favoritos f
+JOIN productos p ON f.productoID = p.productoID
+WHERE f.usuarioID = 2;
 
 
 
